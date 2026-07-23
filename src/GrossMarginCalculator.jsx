@@ -16,6 +16,23 @@ const startingRoles = [
   { id: 3, name: "Developer", hours: 160, rate: 125 },
 ];
 
+function SummaryCell({ label, value }) {
+  return (
+    <div
+      style={{
+        padding: "16px 20px",
+        borderRight: "1px solid #e0e0e0",
+        borderBottom: "1px solid #e0e0e0",
+      }}
+    >
+      <div style={{ fontSize: 11, color: "#6b6b6b", fontWeight: 700, marginBottom: 4 }}>
+        {label}
+      </div>
+      <div style={{ fontSize: 16, fontWeight: 700, color: DC_COLORS.charcoal }}>{value}</div>
+    </div>
+  );
+}
+
 function formatCurrency(value) {
   if (!Number.isFinite(value)) return "$0";
   return value.toLocaleString("en-US", {
